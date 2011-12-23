@@ -1,11 +1,23 @@
 package ru.hh.school.stdlib;
 
+import java.util.*;
+
 public class Substitutor3000 {
-  public void put(String key, String value) {
-    throw new UnsupportedOperationException();
+    HashMap<String, String> map = new HashMap<String, String>();
+  public synchronized void put(String key, String value) {
+
+      map.put(key, value);
   }
 
-  public String get(String key) {
-    throw new UnsupportedOperationException();
+  public synchronized String get(String key) {
+    if (this.map.containsKey(key)) {
+        Parser p = new Parser();
+        String newValue = p.parse(map.get(key), map);
+        //System.out.println("+ "+key +"\n"+newValue);
+        return newValue;
+    }
+      else {
+        return "";
+    }
   }
 }
