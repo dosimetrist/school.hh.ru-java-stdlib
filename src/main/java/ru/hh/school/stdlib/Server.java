@@ -10,7 +10,6 @@ import java.io.*;
 public class Server {
     
     private ServerSocket ss;
-    private InetSocketAddress serverAddr;
     private Substitutor3000 sbst1 = new Substitutor3000();
     private int sleepDelay;
 
@@ -92,7 +91,6 @@ public class Server {
   public Server(InetSocketAddress addr) throws IOException {
       ss = new ServerSocket(addr.getPort());
       System.out.println("Started running...\n");
-      serverAddr = addr;
       sleepDelay = 0;
   }
 
@@ -110,6 +108,6 @@ public class Server {
   }
 
   public int getPort() {
-    return serverAddr.getPort();
+    return ss.getLocalPort();
   }
 }

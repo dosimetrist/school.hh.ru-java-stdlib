@@ -20,9 +20,6 @@ public class SimpleGetTest extends BaseFunctionalTest {
     
     Assert.assertEquals("VALUE", in.readLine());
     Assert.assertEquals("", in.readLine());
-      System.out.println(in.readLine());
-      System.out.println(in.readLine());
-    
     s.close();
   }
 }
