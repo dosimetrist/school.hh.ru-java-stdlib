@@ -3,13 +3,6 @@ package ru.hh.school.stdlib;
 import java.util.*;
 import java.util.regex.*;
 
-/**
- * Created by IntelliJ IDEA.
- * User: vasiliy
- * Date: 19.12.11
- * Time: 21:50
- * To change this template use File | Settings | File Templates.
- */
 public class Parser {
     public String parse(String input, HashMap<String, String> map) {
         String result = input;
