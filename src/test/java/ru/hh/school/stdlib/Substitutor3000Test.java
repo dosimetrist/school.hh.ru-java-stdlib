@@ -21,4 +21,15 @@ public class Substitutor3000Test {
     
     Assert.assertEquals("bla--bla", sbst.get("k"));
   }
+    
+   @Test
+   public void changingValues() {
+       Substitutor3000 sbst = new Substitutor3000();
+       sbst.put("k1", "Moscow");
+       sbst.put("k2", "Mariupol");
+       sbst.put("keys", "${k1} to ${k2}");
+       Assert.assertEquals(sbst.get("keys"), "Moscow to Mariupol");
+       sbst.put("k2", "Odessa");
+       Assert.assertEquals(sbst.get("keys"), "Moscow to Odessa");
+   }
 }
